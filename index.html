@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eahiya Khan - Full Stack Developer</title>
+<meta name="description" content="Full stack developer with 6 years building AI platforms, marketplaces and payment systems. Laravel and PHP, React and Next.js, Vue and Nuxt, Python, PostgreSQL, Docker.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="canonical" href="https://eahiyakhan.netlify.app/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eahiyakhan.netlify.app/">
+<meta property="og:title" content="Eahiya Khan - Full Stack Developer">
+<meta property="og:description" content="Six years building Laravel backends, AI platforms and marketplace payment systems for clients in five countries.">
+<meta property="og:image" content="https://eahiyakhan.netlify.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eahiya Khan - Full Stack Developer">
+<meta name="twitter:description" content="Six years building Laravel backends, AI platforms and marketplace payment systems for clients in five countries.">
+<meta name="twitter:image" content="https://eahiyakhan.netlify.app/og-image.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0c; --ink-2:#111114; --line:#232327;
+  --paper:#eceae4; --muted:#8e8b84; --dim:#5d5b56;
+  --accent:#ffb020; --live:#4ade80;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"IBM Plex Sans",-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --pad:clamp(20px,5vw,80px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{
+  margin:0;background:var(--ink);color:var(--paper);
+  font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+@layer base{
+  button:not(:disabled),[role='button']:not([aria-disabled='true']),
+  [role='menuitem'],[role='option'],[role='tab'],summary,
+  select:not(:disabled),
+  input:not(:disabled):is([type='checkbox'],[type='radio'],[type='range'],[type='color'],[type='file']),
+  ::file-selector-button,
+  label:has(input:is([type='checkbox'],[type='radio'])){cursor:pointer}
+  button:disabled,select:disabled,input:disabled,textarea:disabled,
+  [aria-disabled='true']{cursor:not-allowed}
+}
+::selection{background:var(--accent);color:var(--ink)}
+
+/* atmosphere: warm glow + fine grid + grain */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(60rem 40rem at 12% -8%, rgba(255,176,32,.10), transparent 60%),
+    radial-gradient(45rem 35rem at 95% 8%, rgba(255,176,32,.05), transparent 60%);
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.32;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+.wrap{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+
+/* type */
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;margin:0}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dim);display:flex;gap:14px;flex-wrap:wrap;align-items:center;
+}
+.eyebrow .sep{color:var(--line)}
+a{color:inherit}
+
+/* nav */
+nav{
+  position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);
+  background:rgba(10,10,12,.72);border-bottom:1px solid var(--line);
+}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.brand{font-family:var(--mono);font-size:13px;letter-spacing:.04em}
+.brand b{color:var(--accent);font-weight:500}
+.navlinks{display:flex;gap:26px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.navlinks a{color:var(--muted);text-decoration:none;transition:color .18s}
+.navlinks a:hover{color:var(--accent)}
+@media(max-width:720px){.navlinks{display:none}}
+
+/* hero */
+header{padding:clamp(70px,13vw,150px) 0 clamp(50px,8vw,90px)}
+.h-name{
+  font-size:clamp(56px,13vw,148px);line-height:.9;margin:26px 0 0;
+  letter-spacing:-.03em;
+}
+.h-name em{font-style:italic;color:var(--accent)}
+.lead{
+  font-size:clamp(18px,2.3vw,25px);line-height:1.5;max-width:38ch;
+  color:var(--paper);margin:32px 0 0;font-family:var(--serif);
+}
+.lead .q{color:var(--muted)}
+.h-grid{display:grid;grid-template-columns:1fr auto;gap:clamp(28px,5vw,72px);
+  align-items:center}
+.h-portrait{margin:0;width:clamp(280px,30vw,420px);position:relative;flex-shrink:0}
+.h-portrait::before{content:"";position:absolute;inset:-11px -11px 11px 11px;
+  border:1px solid var(--accent);opacity:.32;pointer-events:none;transition:opacity .4s}
+.h-portrait:hover::before{opacity:.75}
+.h-portrait img{width:100%;height:auto;display:block;border:1px solid var(--line);
+  filter:grayscale(.38) contrast(1.04);transition:filter .55s}
+.h-portrait:hover img{filter:grayscale(0) contrast(1)}
+@media(max-width:860px){
+  .h-grid{grid-template-columns:1fr;gap:26px}
+  .h-portrait{order:-1;width:172px}
+  .h-portrait::before{inset:-6px}
+}
+.strip{display:flex;flex-wrap:wrap;align-items:center;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.09em;
+  color:var(--muted);margin:26px 0 0;max-width:54ch;row-gap:9px}
+.strip span{white-space:nowrap}
+.strip span:not(:last-child)::after{content:"/";color:var(--dim);margin:0 9px}
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;background:var(--line);border:1px solid var(--line);margin:56px 0 0;
+}
+.stat{background:var(--ink);padding:22px 20px}
+.stat b{display:block;font-family:var(--mono);font-size:clamp(28px,4vw,40px);
+  font-weight:400;color:var(--accent);line-height:1}
+.stat span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--dim);margin-top:10px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:36px 0 0}
+.btn{
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+  padding:13px 22px;border:1px solid var(--line);color:var(--paper);text-decoration:none;
+  transition:all .2s;display:inline-block;cursor:pointer;background:transparent;
+}
+.btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn.solid{background:var(--accent);color:var(--ink);border-color:var(--accent);font-weight:500}
+.btn.solid:hover{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+
+/* sections */
+section{padding:clamp(60px,9vw,110px) 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:52px}
+.sec-num{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.1em}
+.sec-title{font-size:clamp(30px,5vw,52px);letter-spacing:-.02em}
+
+/* work */
+.proj{
+  display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(26px,4vw,64px);
+  align-items:center;padding:clamp(34px,5vw,60px) 0;border-bottom:1px solid var(--line);
+}
+.proj:last-of-type{border-bottom:0}
+@media(max-width:860px){.proj{grid-template-columns:1fr;gap:26px}}
+.proj-shot{position:relative;order:2}
+@media(max-width:860px){.proj-shot{order:0}}
+.proj.flip .proj-shot{order:-1}
+/* one consistent order on small screens: text, then screenshot */
+@media(max-width:860px){.proj-shot,.proj.flip .proj-shot{order:0}}
+.proj-shot img{
+  width:100%;display:block;border:1px solid var(--line);
+  filter:grayscale(.28) contrast(1.03);transition:filter .45s,transform .45s;
+}
+.proj:hover .proj-shot img{filter:grayscale(0) contrast(1);transform:translateY(-4px)}
+.proj-meta{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--dim);display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--live);display:inline-block;
+  box-shadow:0 0 0 3px rgba(74,222,128,.16)}
+.proj h3{font-size:clamp(30px,4.4vw,46px);line-height:1.03;letter-spacing:-.02em}
+.proj .kicker{font-family:var(--sans);font-size:14px;color:var(--accent);
+  margin:10px 0 0;letter-spacing:.01em}
+.proj p{color:var(--muted);margin:18px 0 0;max-width:52ch;font-size:15.5px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:22px 0 0}
+.tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--muted);
+  border:1px solid var(--line);padding:5px 10px}
+.plink{display:inline-flex;align-items:center;gap:8px;margin-top:22px;font-family:var(--mono);
+  font-size:12px;letter-spacing:.06em;color:var(--accent);text-decoration:none;
+  border-bottom:1px solid transparent;transition:border-color .2s}
+.plink:hover{border-bottom-color:var(--accent)}
+
+.diagram{border:1px solid var(--line);background:
+  linear-gradient(180deg,rgba(255,176,32,.03),transparent);padding:18px}
+.diagram svg{width:100%;height:auto;display:block}
+
+/* small grid */
+.more{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);margin-top:56px}
+@media(min-width:1000px){.more{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--ink);padding:0;transition:background .25s;
+  text-decoration:none;color:inherit;display:block;cursor:pointer}
+.card:hover h4{color:var(--accent)}
+.also{margin-top:44px;border-top:1px solid var(--line);padding-top:24px}
+.also h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 12px;font-weight:500}
+.also p{color:var(--muted);font-size:14px;max-width:80ch;margin:0;line-height:1.9}
+.also span{color:var(--dim);margin:0 5px}
+.card:hover{background:var(--ink-2)}
+.card img{width:100%;display:block;filter:grayscale(.5);transition:filter .4s}
+.card:hover img{filter:grayscale(0)}
+.card-body{padding:20px}
+.card h4{font-family:var(--serif);font-weight:400;font-size:21px;margin:0}
+.card .role{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--dim);margin:8px 0 0}
+.card p{color:var(--muted);font-size:13.5px;margin:12px 0 0}
+
+/* capabilities */
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line)}
+@media(min-width:1000px){.caps{grid-template-columns:repeat(3,1fr)}}
+.cap{background:var(--ink);padding:26px 22px}
+.cap h4{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent);margin:0 0 16px;font-weight:500}
+.cap ul{list-style:none;margin:0;padding:0}
+.cap li{color:var(--muted);font-size:14px;padding:5px 0;border-bottom:1px solid rgba(35,35,39,.6)}
+.cap li:last-child{border-bottom:0}
+
+/* experience */
+.job{display:grid;grid-template-columns:210px 1fr;gap:24px;padding:26px 0;
+  border-bottom:1px solid var(--line)}
+.job:last-child{border-bottom:0}
+@media(max-width:700px){.job{grid-template-columns:1fr;gap:8px}}
+.job .when{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.06em;
+  padding-top:5px}
+.job h4{font-family:var(--serif);font-weight:400;font-size:25px;margin:0}
+.job .co{color:var(--accent);font-size:14px;margin:4px 0 0;font-family:var(--mono);
+  letter-spacing:.04em}
+.job p{color:var(--muted);font-size:14.5px;margin:12px 0 0;max-width:62ch}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);margin-top:44px}
+.cc{background:var(--ink);padding:26px 22px;text-decoration:none;display:block;
+  transition:background .25s;cursor:pointer}
+.cc:hover{background:var(--ink-2)}
+.cc span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--dim)}
+.cc b{display:block;font-weight:400;font-size:16px;margin-top:10px;color:var(--paper);
+  word-break:break-word}
+.cc:hover b{color:var(--accent)}
+
+footer{border-top:1px solid var(--line);padding:30px 0;font-family:var(--mono);
+  font-size:11.5px;color:var(--dim);display:flex;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;letter-spacing:.06em}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),
+  transform .7s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+  .btn:hover,.proj:hover .proj-shot img{transform:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">EAHIYA<b>.</b>KHAN</div>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#stack">Stack</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="h-grid">
+    <div class="h-main">
+    <div class="eyebrow rv">
+      <span>Full stack developer</span><span class="sep">/</span>
+      <span>Dhaka, Bangladesh</span><span class="sep">/</span>
+      <span style="color:var(--live)">Open to remote work</span>
+    </div>
+    <h1 class="h-name rv">Eahiya<br>Khan<em>.</em></h1>
+    <p class="lead rv">
+      I build and ship products end to end, backend through interface.
+      <span class="q">Laravel and PHP where the business logic lives, React, Next.js,
+      Vue and Nuxt on the front, Python where the AI work happens. Six years of it,
+      most recently AI platforms, marketplace payment rails and multi tenant systems
+      for clients in five countries.</span>
+    </p>
+    <div class="cta rv">
+      <a class="btn solid" href="Eahiya_Khan_CV.pdf" download>Download CV</a>
+      <a class="btn" href="https://github.com/MdEahiaMondal" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linkedin.com/in/eahiya-khan-80151b204" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="mailto:mdeahiamondal@gmail.com">Email</a>
+    </div>
+    <p class="strip rv"><span>Laravel</span><span>PHP</span><span>Next.js</span><span>React</span><span>Nuxt</span><span>Vue</span><span>TypeScript</span><span>Python</span><span>PostgreSQL</span><span>MySQL</span><span>Redis</span><span>Docker</span><span>AI and RAG</span></p>
+    </div>
+    <figure class="h-portrait rv">
+      <img src="assets/img/eahiya.jpg" alt="Portrait of Eahiya Khan" width="720" height="720">
+    </figure>
+    </div>
+    <div class="stats rv">
+      <div class="stat"><b>06+</b><span>Years building</span></div>
+      <div class="stat"><b>20+</b><span>Projects shipped</span></div>
+      <div class="stat"><b>05</b><span>Countries served</span></div>
+      <div class="stat"><b>17</b><span>AI tools in production</span></div>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">Selected work</h2>
+    </div>
+
+    <article class="proj rv">
+      <div class="proj-text">
+        <div class="proj-meta">
+          <span class="dot"></span><span>Live</span><span class="sep">/</span>
+          <span>2026</span><span class="sep">/</span><span>Lead full stack developer</span>
+        </div>
+        <h3>Ali Pro</h3>
+        <p class="kicker">Multi tool AI SaaS platform</p>
+        <p>
+          Seventeen AI tools sitting behind one credit wallet. I built a provider layer
+          that routes each tool to the right model across OpenAI, Anthropic Claude and
+          Google Gemini, so swapping a vendor never touches tool code. Stripe handles
+          subscriptions and top ups with idempotent webhooks, and a cost guard enforces
+          per provider spend caps before a single credit is charged.
+        </p>
+        <div class="tags">
+          <span class="tag">Laravel 13</span><span class="tag">PHP 8.3</span>
+          <span class="tag">Next.js 14</span><span class="tag">TypeScript</span>
+          <span class="tag">Redis + Horizon</span><span class="tag">Stripe</span>
+        </div>
+        <a class="plink" href="https://ali-pro.com" target="_blank" rel="noopener">ali-pro.com</a>
+      </div>
+      <div class="proj-shot"><img src="assets/img/alipro.jpg" alt="Ali Pro marketing site: the AI operating system for work, content and growth" loading="lazy"></div>
+    </article>
+
+    <article class="proj flip rv">
+      <div class="proj-text">
+        <div class="proj-meta">
+          <span>2026</span><span class="sep">/</span><span>Lead full stack developer</span>
+          <span class="sep">/</span><span>Pre launch</span>
+        </div>
+        <h3>Wair</h3>
+        <p class="kicker">Peer to peer fashion marketplace, UAE</p>
+        <p>
+          Stripe Connect Express moves money between strangers: seller onboarding,
+          commission splits, escrow, and automatic release 48 hours after delivery.
+          Buyers and sellers talk in real time over Laravel Reverb WebSockets, disputes
+          run through a multi stage refund workflow, and the whole interface ships in
+          English and Arabic with full right to left support.
+        </p>
+        <div class="tags">
+          <span class="tag">Laravel 13</span><span class="tag">Filament 3</span>
+          <span class="tag">Next.js 14</span><span class="tag">Stripe Connect</span>
+          <span class="tag">Reverb</span><span class="tag">Cloudflare R2</span>
+        </div>
+      </div>
+      <div class="proj-shot"><img src="assets/img/wair.jpg" alt="Wair marketplace landing page" loading="lazy"></div>
+    </article>
+
+    <article class="proj rv">
+      <div class="proj-text">
+        <div class="proj-meta">
+          <span class="dot"></span><span>Live</span><span class="sep">/</span>
+          <span>2026</span><span class="sep">/</span><span>Lead full stack developer</span>
+        </div>
+        <h3>KmerBus</h3>
+        <p class="kicker">Intercity transport and parcel logistics, Cameroon</p>
+        <p>
+          Operators sell seats through a live seat map, passengers pay with MTN Mobile
+          Money or Orange Money, and station agents keep selling through an offline cash
+          desk when the customer has no internet at all. Parcels move along a five stage
+          photo proof chain. Delivered as an installable PWA in French and English on
+          separate Dockerised stacks.
+        </p>
+        <div class="tags">
+          <span class="tag">Nuxt 4</span><span class="tag">Vue 3</span>
+          <span class="tag">Laravel 13</span><span class="tag">PostgreSQL 17</span>
+          <span class="tag">Docker</span><span class="tag">Mobile Money</span>
+        </div>
+        <a class="plink" href="https://kmerbus.com" target="_blank" rel="noopener">kmerbus.com</a>
+      </div>
+      <div class="proj-shot"><img src="assets/img/kmerbus.jpg" alt="KmerBus landing page in French showing routes and partner agencies" loading="lazy"></div>
+    </article>
+
+    <article class="proj flip rv">
+      <div class="proj-text">
+        <div class="proj-meta">
+          <span>2026</span><span class="sep">/</span><span>Full stack developer, freelance</span>
+        </div>
+        <h3>OposChat</h3>
+        <p class="kicker">AI study assistant for Spanish public sector exams</p>
+        <p>
+          A retrieval pipeline that answers only from the uploaded legal corpus. Documents
+          are chunked with structure awareness, embedded into ChromaDB through a Python
+          FastAPI bridge, and retrieved with vector similarity plus BM25 reranking. A four
+          stage relevance gate refuses off topic questions without ever calling the model,
+          which cuts wasted spend and stops hallucinated answers before they happen.
+        </p>
+        <div class="tags">
+          <span class="tag">Laravel 12</span><span class="tag">Vue 3</span>
+          <span class="tag">Inertia 2</span><span class="tag">ChromaDB</span>
+          <span class="tag">Python FastAPI</span><span class="tag">OpenAI</span>
+        </div>
+      </div>
+      <div class="proj-shot">
+        <div class="diagram">
+          <svg viewBox="0 0 520 330" role="img" aria-label="Retrieval pipeline: documents are chunked and embedded into ChromaDB, retrieved by vector similarity and BM25, then passed through a four stage relevance gate that either calls the model or refuses">
+            <defs>
+              <marker id="ar" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0 L8 4 L0 8 z" fill="#5d5b56"/>
+              </marker>
+            </defs>
+            <g font-family="IBM Plex Mono, monospace" font-size="11">
+              <rect x="14" y="16" width="150" height="36" fill="none" stroke="#232327"/>
+              <text x="30" y="38" fill="#8e8b84">Legal corpus (PDF)</text>
+              <line x1="89" y1="52" x2="89" y2="76" stroke="#5d5b56" marker-end="url(#ar)"/>
+              <rect x="14" y="78" width="150" height="36" fill="none" stroke="#232327"/>
+              <text x="30" y="100" fill="#8e8b84">Structure chunker</text>
+              <line x1="89" y1="114" x2="89" y2="138" stroke="#5d5b56" marker-end="url(#ar)"/>
+              <rect x="14" y="140" width="150" height="36" fill="none" stroke="#ffb020"/>
+              <text x="42" y="162" fill="#ffb020">ChromaDB</text>
+              <line x1="164" y1="158" x2="196" y2="158" stroke="#5d5b56" marker-end="url(#ar)"/>
+              <rect x="198" y="120" width="140" height="34" fill="none" stroke="#232327"/>
+              <text x="220" y="141" fill="#8e8b84">Vector search</text>
+              <rect x="198" y="162" width="140" height="34" fill="none" stroke="#232327"/>
+              <text x="222" y="183" fill="#8e8b84">BM25 rerank</text>
+              <line x1="338" y1="158" x2="370" y2="158" stroke="#5d5b56" marker-end="url(#ar)"/>
+              <rect x="372" y="122" width="132" height="72" fill="none" stroke="#ffb020"/>
+              <text x="392" y="148" fill="#ffb020">Relevance gate</text>
+              <text x="392" y="168" fill="#5d5b56" font-size="10">avg &gt;= 0.65</text>
+              <text x="392" y="183" fill="#5d5b56" font-size="10">max &gt;= 0.70</text>
+              <line x1="438" y1="194" x2="438" y2="222" stroke="#5d5b56" marker-end="url(#ar)"/>
+              <rect x="372" y="224" width="132" height="34" fill="none" stroke="#4ade80"/>
+              <text x="404" y="245" fill="#4ade80">Call model</text>
+              <line x1="372" y1="158" x2="344" y2="158" stroke="#232327"/>
+              <path d="M372 175 L356 175 L356 292 L372 292" fill="none" stroke="#5d5b56" marker-end="url(#ar)"/>
+              <rect x="372" y="274" width="132" height="34" fill="none" stroke="#232327"/>
+              <text x="392" y="295" fill="#8e8b84">Refuse, no call</text>
+              <text x="14" y="300" fill="#5d5b56" font-size="10">Off topic questions never</text>
+              <text x="14" y="315" fill="#5d5b56" font-size="10">reach the model at all.</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </article>
+
+    <div class="more rv">
+      <a class="card" href="https://sharparchive.com" target="_blank" rel="noopener">
+        <img src="assets/img/sharparchive.jpg" alt="SharpArchive site" loading="lazy">
+        <div class="card-body">
+          <h4>SharpArchive</h4>
+          <p class="role">Backend developer</p>
+          <p>Email and digital communication archiving for finance, education and government, built to hold up under data retention rules.</p>
+        </div>
+      </a>
+      <a class="card" href="https://prowhats.com" target="_blank" rel="noopener">
+        <img src="assets/img/prowhats.jpg" alt="ProWhats, now Radd" loading="lazy">
+        <div class="card-body">
+          <h4>ProWhats, now Radd</h4>
+          <p class="role">Backend and API developer</p>
+          <p>Multi tenant WhatsApp Business automation. Chatbot flows, broadcast messaging and template approval on queue backed Laravel services.</p>
+        </div>
+      </a>
+      <a class="card" href="https://qataratapp.com" target="_blank" rel="noopener">
+        <img src="assets/img/qatarat.jpg" alt="Qatarat water delivery platform" loading="lazy">
+        <div class="card-body">
+          <h4>Qatarat</h4>
+          <p class="role">Full stack developer</p>
+          <p>Water delivery for mosques in Makkah. APIs for the client app, the driver app and the admin panel, with live tracking and scheduled booking.</p>
+        </div>
+      </a>
+      <a class="card" href="https://dailydeals.ph" target="_blank" rel="noopener">
+        <img src="assets/img/dailydeals.jpg" alt="DailyDeals.ph community deals platform" loading="lazy">
+        <div class="card-body">
+          <h4>DailyDeals.ph</h4>
+          <p class="role">Full stack developer</p>
+          <p>Community deals platform for the Philippines. Users submit, vote on and discuss deals, with live updates over Laravel Reverb.</p>
+        </div>
+      </a>
+      <a class="card" href="https://skmobileschool.com" target="_blank" rel="noopener">
+        <img src="assets/img/skmobile.jpg" alt="SK Mobile School training platform" loading="lazy">
+        <div class="card-body">
+          <h4>SK Mobile School</h4>
+          <p class="role">Full stack developer</p>
+          <p>Online and offline mobile servicing courses covering hardware, schematics, EMMC and network sections for students across Bangladesh.</p>
+        </div>
+      </a>
+      <div class="card">
+        <img src="assets/img/math.jpg" alt="My Math Olympiads exam platform" loading="lazy">
+        <div class="card-body">
+          <h4>My Math Olympiads</h4>
+          <p class="role">Full stack developer</p>
+          <p>Competition exam platform with a drag and drop question builder, LaTeX equation authoring, timed exams and generated PDF certificates.</p>
+        </div>
+      </div>
+    </div>
+    <div class="also rv">
+      <h4>Also built</h4>
+      <p>Smart Execution Platform (B2B collaboration and project execution) <span>/</span>
+      DreamCrowd (multi sided service marketplace) <span>/</span> Hooks Store (creator
+      commerce SaaS, nine payment gateways) <span>/</span> HomeRehabPro <span>/</span>
+      Influsway (influencer marketing, Instagram OAuth, MamoPay) <span>/</span> Geofencing
+      Location Marketing Platform <span>/</span> LiveCX and CXBrainstorm <span>/</span>
+      OEHealth <span>/</span> University Management System <span>/</span> Supply.mv</p>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">What I work with</h2>
+    </div>
+    <div class="caps rv">
+      <div class="cap">
+        <h4>AI and LLM</h4>
+        <ul>
+          <li>OpenAI, Anthropic Claude, Gemini</li>
+          <li>Provider abstraction with failover</li>
+          <li>RAG pipelines and embeddings</li>
+          <li>ChromaDB, Pinecone</li>
+          <li>BM25 reranking, query rewriting</li>
+          <li>SSE token streaming</li>
+          <li>Spend caps and credit metering</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h4>Backend</h4>
+        <ul>
+          <li>Laravel 13, 12, 11</li>
+          <li>PHP 8.3 and 8.5</li>
+          <li>Horizon, queues, jobs, events</li>
+          <li>Laravel Reverb WebSockets</li>
+          <li>Filament 3 admin panels</li>
+          <li>REST API design, JWT, Sanctum</li>
+          <li>Multi tenant architecture, RBAC</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h4>Frontend</h4>
+        <ul>
+          <li>Next.js 14, React 18</li>
+          <li>Nuxt 4, Vue 3, Pinia</li>
+          <li>TypeScript</li>
+          <li>Inertia.js 2, Blade</li>
+          <li>Tailwind CSS v4, shadcn/ui</li>
+          <li>TanStack Query</li>
+          <li>i18n and RTL layouts</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h4>Payments</h4>
+        <ul>
+          <li>Stripe Checkout and Cashier</li>
+          <li>Stripe Connect marketplaces</li>
+          <li>MTN Mobile Money, Orange Money</li>
+          <li>bKash, MyFatoorah, HyperPay</li>
+          <li>PayTabs, MamoPay, Iyzico</li>
+          <li>PayPal, Razorpay, Paystack</li>
+          <li>Webhooks and idempotency</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h4>Data and infrastructure</h4>
+        <ul>
+          <li>MySQL 8, PostgreSQL 17</li>
+          <li>Redis, query tuning, indexing</li>
+          <li>Docker and Docker Compose</li>
+          <li>GitHub Actions CI/CD</li>
+          <li>Cloudways, Forge, VPS, Fly.io</li>
+          <li>Cloudflare R2 and CDN, AWS S3</li>
+          <li>Sentry, Telescope, Horizon</li>
+        </ul>
+      </div>
+      <div class="cap">
+        <h4>How I work</h4>
+        <ul>
+          <li>Requirements and PRD authoring</li>
+          <li>Direct client communication</li>
+          <li>Milestone based delivery</li>
+          <li>PHPUnit, Pest, Vitest</li>
+          <li>Code review and Git workflow</li>
+          <li>Remote across time zones</li>
+          <li>English and Bangla</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">03</span>
+      <h2 class="sec-title">Where I have worked</h2>
+    </div>
+
+    <div class="job rv">
+      <div class="when">Oct 2025 - Present</div>
+      <div>
+        <h4>Full Stack Developer</h4>
+        <p class="co">NexaLance / Remote</p>
+        <p>Lead delivery for international clients, owning projects end to end from
+           requirements and PRD through architecture, build, deployment and handover.
+           Built Ali Pro, Wair and KmerBus.</p>
+      </div>
+    </div>
+
+    <div class="job rv">
+      <div class="when">Mar 2024 - Sep 2025</div>
+      <div>
+        <h4>Full Stack Developer</h4>
+        <p class="co">SOFOF Tech / Riyadh, Saudi Arabia, remote</p>
+        <p>Led development of scalable backend systems on Laravel, Vue.js and Nuxt.js
+           across qataratapp.com, the ProWhats ecosystem and smart-execution.net.</p>
+      </div>
+    </div>
+
+    <div class="job rv">
+      <div class="when">Nov 2020 - Feb 2024</div>
+      <div>
+        <h4>Full Stack Developer, previously Back End Developer</h4>
+        <p class="co">Developer eXperience Hub / Dhaka, remote</p>
+        <p>Promoted from back end to full stack after three years. Built and deployed
+           commercial applications including sharparchive.com, cxbrainstorm.com,
+           livecx.com and skmobileschool.com.</p>
+      </div>
+    </div>
+
+    <div class="job rv">
+      <div class="when">Jan 2020 - May 2020</div>
+      <div>
+        <h4>Back End Developer</h4>
+        <p class="co">Tech2view Limited / Dhaka</p>
+        <p>Backend modules and dashboards on Laravel and MySQL, front end integration,
+           and performance work across legacy endpoints.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="sec-num">04</span>
+      <h2 class="sec-title">Get in touch</h2>
+    </div>
+    <p class="lead rv" style="margin-top:0">
+      Available for remote roles and project work.
+      <span class="q">Tell me what you are building and I will tell you honestly whether
+      I am the right person for it.</span>
+    </p>
+    <div class="contact-grid rv">
+      <a class="cc" href="mailto:mdeahiamondal@gmail.com">
+        <span>Email</span><b>mdeahiamondal@gmail.com</b></a>
+      <a class="cc" href="tel:+8801777689943">
+        <span>Phone</span><b>+880 1777689943</b></a>
+      <a class="cc" href="https://github.com/MdEahiaMondal" target="_blank" rel="noopener">
+        <span>GitHub</span><b>MdEahiaMondal</b></a>
+      <a class="cc" href="https://linkedin.com/in/eahiya-khan-80151b204" target="_blank" rel="noopener">
+        <span>LinkedIn</span><b>eahiya-khan</b></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;width:100%">
+    <span>Eahiya Khan - Full Stack Developer</span>
+    <span>Dhaka, Bangladesh</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){
+    els.forEach(function(e){e.classList.add('in')}); return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  },{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+
+  els.forEach(function(el, i){
+    // stagger the first screen so the load reads as one motion
+    if(i < 6) el.style.transitionDelay = (i * 90) + 'ms';
+    io.observe(el);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eahiyakhan.netlify.app/sitemap.xml
